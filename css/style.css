@@ -1,10 +1,21 @@
 /********** Template CSS **********/
 :root {
-    --primary: #00b6f9;
-    --secondary: #34AD54;
-    --light: #EEF9FF;
-    --dark: #091E3E;
+    --primary: #04aa6d;
+    --secondary: #d9eee1d4;
+    --blog:#eed9d9b0;
+    --accent:#ff172b;
+    --light: #fded74;
+    --dark: #3e0909;
 }
+
+.servicelink{
+    color:white;
+}
+.servicelink:hover{
+    color: var(--accent);
+}
+  
+
 
 
 /*** Spinner ***/
@@ -20,6 +31,7 @@
 .logologo{
         width: 56px;
         height: auto;
+        margin-right: 10px;
       }
 
 @-webkit-keyframes sk-rotateplane {
@@ -82,6 +94,11 @@ h6,
     font-weight: 600 !important;
 }
 
+@media (min-width:769px){
+    h1{
+        font-size:2rem;
+    }
+}
 
 /*** Button ***/
 .btn {
@@ -134,7 +151,7 @@ h6,
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: #FFFFFF;
+    color: #cf0e0e;
     font-size: 18px;
     font-weight: 600;
     outline: none;
@@ -152,7 +169,7 @@ h6,
 }
 
 .navbar-dark .navbar-brand h1 {
-    color: #FFFFFF;
+    color: #e60909;
 }
 
 .navbar-dark .navbar-toggler {
@@ -234,11 +251,27 @@ h6,
     .carousel-caption h5 {
         font-size: 14px;
         font-weight: 500 !important;
+
+    }
+    .whoweareimage{
+        display:none;
+    }
+    .teachingimage{
+        display:none;
+    }
+    .hide-on-mobile {
+        display: none;
     }
 
     .carousel-caption h1 {
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 600 !important;
+    }
+    .container-fluid h1,h5{
+        font-size:20px;
+    }
+    .container-fluid h4{
+        font-size:18px;
     }
 }
 
@@ -259,7 +292,7 @@ h6,
     position: absolute;
     content: "";
     width: 150px;
-    height: 5px;
+    height: 3px;
     left: 0;
     bottom: 0;
     background: var(--primary);
@@ -301,18 +334,44 @@ h6,
     -webkit-animation: section-title-run-sm 5s infinite linear;
     animation: section-title-run-sm 5s infinite linear;
 }
+/* Standard Keyframes */
+@keyframes section-title-run {
+    0% { left: 0; }
+    50% { left: 145px; }
+    100% { left: 0; }
+}
 
+@keyframes section-title-run-center {
+    0% { left: 50%; margin-left: -75px; }
+    50% { left: 50%; margin-left: 45px; }
+    100% { left: 50%; margin-left: -75px; }
+}
+
+@keyframes section-title-run-sm {
+    0% { left: 0; }
+    50% { left: 85px; }
+    100% { left: 0; }
+}
+
+/* Optional for Webkit-Specific Support (Older Browsers) */
 @-webkit-keyframes section-title-run {
-    0% {left: 0; } 50% { left : 145px; } 100% { left: 0; }
+    0% { left: 0; }
+    50% { left: 145px; }
+    100% { left: 0; }
 }
 
 @-webkit-keyframes section-title-run-center {
-    0% { left: 50%; margin-left: -75px; } 50% { left : 50%; margin-left: 45px; } 100% { left: 50%; margin-left: -75px; }
+    0% { left: 50%; margin-left: -75px; }
+    50% { left: 50%; margin-left: 45px; }
+    100% { left: 50%; margin-left: -75px; }
 }
 
 @-webkit-keyframes section-title-run-sm {
-    0% {left: 0; } 50% { left : 85px; } 100% { left: 0; }
+    0% { left: 0; }
+    50% { left: 85px; }
+    100% { left: 0; }
 }
+
 
 
 /*** Service ***/
@@ -481,7 +540,65 @@ h6,
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/look1.webp) center center no-repeat;
     background-size: cover;
 }
+@media(max-width: 576px){
+    .bg-header {
+        background:none;
+        display: none;
+        
+    }
+    .abouts{
+        text-align:center;
+        margin-bottom: 30px;
+        color:#fc3c3c;
+    }
+    .service{
+        color:red;
+    }
+    .missionimage{
+        display: none;
+    }
+    .box{
+        height:180px;
+        width: 80%;
+        margin: 0 auto;
 
+    }
+    .logomine{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .blog-box{
+        width:85%;
+        margin:0 auto;
+    }
+    .sizereduce{
+        font-size: 17px;
+    }
+    .ichange{
+        font-size: 21px;
+    }
+    .ich{
+            font-size: 23px;
+    }
+    .blog-box1{
+        width:65%;
+        height:5%;
+        margin:0 auto;
+    }
+ 
+}
+@media(min-width:1000px){
+    .abouts{
+        color:#06A3DA;
+        
+    }
+    .service{
+        color:#06A3DA;
+    }
+   
+}
 .link-animated a {
     transition: .5s;
 }
@@ -495,3 +612,33 @@ h6,
         margin-bottom: -75px;
     }
 }
+
+/* Reduce carousel image size for desktop */
+@media (min-width: 1024px) {
+    #header-carousel {
+        height: 500px; /* Reduce the overall height */
+    }
+    #header-carousel .carousel-item img {
+        height: 500px; /* Match the carousel height */
+        object-fit: cover; /* Ensure the image scales properly */
+        width: 100%; /* Keep the full width */
+    }
+
+    /* Position alphaesAI text inside the body */
+    .carousel-caption {
+        position: absolute;
+        top: 50%; /* Adjust this percentage to move text vertically */
+        transform: translateY(-50%);
+        text-align: center; /* Center text horizontally */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem; /* Adjust font size for subtitle */
+        margin-bottom: 0.5rem; /* Space below the text */
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.5rem; /* Adjust font size for the main heading */
+    }
+}
+
